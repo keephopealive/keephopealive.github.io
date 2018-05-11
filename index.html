@@ -1,1 +1,53 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #test {
+            width: 500px;
+            height: 500px;
+            border: 1px solid black;
+        }
+    </style>
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function(){
+
+            // var x = 5;
+            // console.log(x);
+            
+            document.getElementById("btn").onmouseenter = function(){
+                document.getElementById("test").style.backgroundColor = "yellow";
+            }
+
+            document.getElementById("btn").onmouseleave = function(){
+                document.getElementById("test").style.backgroundColor = "green";
+            }
+
+            document.getElementById("btn").onclick = function(){
+                document.getElementById("test").style.backgroundColor = "red";
+            }
+
+            document.getElementById("secondBtn").onclick = function(){
+                document.getElementById("test").style.backgroundColor = "purple";
+            }
+
+
+        })
+
+        
+    </script>
+</head>
+<body>
+    <div id="test"></div>
+    
+    <button id="btn">Click</button>
+
+    <button id="secondBtn">Click</button>
+
+
+</body>
+</html>
