@@ -1,1 +1,522 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="academy-favicon.png">
+
+  <title> Dojo Academy - Algos Wiki </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="bootstrap.min.css" rel="stylesheet">
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <link href="viewport-bug-workaround.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+          aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Dojo Academy Wiki - Algorithms</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="#">Dashboard</a>
+          </li>
+          <li>
+            <a href="#">Settings</a>
+          </li>
+          <li>
+            <a href="#">Profile</a>
+          </li>
+          <li>
+            <a href="#">Help</a>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="Search...">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-2 sidebar">
+        <!-- <ul class="nav nav-sidebar">
+          <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">Reports</a></li>
+          <li><a href="#">Analytics</a></li>
+          <li><a href="#">Export</a></li>
+        </ul>
+        <ul class="nav nav-sidebar">
+          <li><a href="">Nav item</a></li>
+          <li><a href="">Nav item again</a></li>
+          <li><a href="">One more nav</a></li>
+          <li><a href="">Another nav item</a></li>
+          <li><a href="">More navigation</a></li>
+        </ul> -->
+        <ul class="nav nav-sidebar">
+          <ul>
+            <li>
+              <a href="#LinkTarget_2056">Algorithms_Collection</a>
+            </li>
+            <li>
+              <a href="#LinkTarget_2057">Chapter 0 – Foundation Concepts</a>
+              <ul>
+                <li>
+                  <a href="#LinkTarget_2058">Computers, Software, and Source Code</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2059">Code Flow</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2060">Variables</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2061">Data Types</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2062">Not All Equals Signs Are the Same!</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2063">Printing to the Console</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2064">Functions</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2065">Conditionals</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2066">Complex Conditionals</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2067">Chaining and Nesting</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2068">Loops</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2069">FOR Loops</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2070">WHILE Loops</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2071">Other Loop Tips</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2072">Loops and Code Flow</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2073">Parameters</a>
+                </li>
+                <li>
+                  <a href="#LinkTarget_2074">Foundations Review</a>
+                </li>
+              </ul>
+              <ul class="nav nav-sidebar">
+                <ul>
+                  <li>
+                    <a href="#LinkTarget_2056">Algorithms_Collection</a>
+                  </li>
+                  <li>
+                    <a href="#LinkTarget_2057">Chapter 0 – Foundation Concepts</a>
+                    <ul>
+                      <li>
+                        <a href="#LinkTarget_2058">Computers, Software, and Source Code</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2059">Code Flow</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2060">Variables</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2061">Data Types</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2062">Not All Equals Signs Are the Same!</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2063">Printing to the Console</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2064">Functions</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2065">Conditionals</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2066">Complex Conditionals</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2067">Chaining and Nesting</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2068">Loops</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2069">FOR Loops</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2070">WHILE Loops</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2071">Other Loop Tips</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2072">Loops and Code Flow</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2073">Parameters</a>
+                      </li>
+                      <li>
+                        <a href="#LinkTarget_2074">Foundations Review</a>
+                      </li>
+                    </ul>
+                    <ul class="nav nav-sidebar">
+                      <ul>
+                        <li>
+                          <a href="#LinkTarget_2056">Algorithms_Collection</a>
+                        </li>
+                        <li>
+                          <a href="#LinkTarget_2057">Chapter 0 – Foundation Concepts</a>
+                          <ul>
+                            <li>
+                              <a href="#LinkTarget_2058">Computers, Software, and Source Code</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2059">Code Flow</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2060">Variables</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2061">Data Types</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2062">Not All Equals Signs Are the Same!</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2063">Printing to the Console</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2064">Functions</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2065">Conditionals</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2066">Complex Conditionals</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2067">Chaining and Nesting</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2068">Loops</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2069">FOR Loops</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2070">WHILE Loops</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2071">Other Loop Tips</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2072">Loops and Code Flow</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2073">Parameters</a>
+                            </li>
+                            <li>
+                              <a href="#LinkTarget_2074">Foundations Review</a>
+                            </li>
+                          </ul>
+      </div>
+
+      <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+        <h1>Introduction</h1>
+        <p>
+          <br>
+        </p>
+        <p>This chapter explores the array: reading, changing, as well as adding and removing elements (which change the array’s
+          length). Before chapter’s end, we touch on associative arrays as well. At this point we expect you to quickly complete
+          the 13 mandatory algorithm challenges. Building array-inspection functions such as
+          <strong>min(arr), max(arr), sum(arr) </strong>and
+          <strong>average(arr)</strong> should be easy and rapid.</p>
+        <p>
+          <br>
+        </p>
+        <p>Let’s review. Arrays store multiple values, which are accessed by specifying an index (offset from array front) in
+          square brackets. This random-access makes arrays well-suited to be read in a different order than they were added.
+          Arrays are less suitable (still common) in scenarios with many insertions and removals&nbsp;if you need the array
+          to stay in a particular sorted order. In that case, other values might need to be moved to create a space for inserting
+          a new value (or, to fill a vacancy caused by removing a value). Arrays are not limited to one data type: one array
+          can contain numbers, booleans, strings, etc.</p>
+        <p>
+          <br>Arrays are zero-based: an array’s first value is located at index 0. Accordingly, array attribute
+          <strong>.length</strong> literally means “one more than the last populated index.” Like other interpreted languages, JavaScript
+          arrays are not fixed-length; they automatically grow as values are set beyond the current length.&nbsp;</p>
+        <p>
+          <br>
+        </p>
+        <p>Tracking variables with T-diagrams can be very helpful when working with arrays. Use a T-diagram for this chapter’s
+          challenges. Below are constructs we’ll use this chapter. Remember these building blocks!</p>
+        <p>
+          <br>
+        </p>
+        <h3>Declaring a new array:</h3>
+        <pre>var myArr = [];
+          console.log(myArr.length); // -&gt; "0"</pre>
+        <h3>Setting and accessing array values:</h3>
+        <pre>myArr[0] = 42; // myArr == [42], length==1
+          console.log(myArr[0]); // -&gt; "42"
+          </pre>
+        <h3>
+          Array.length is determined by largest index:</h3>
+        <pre>myArr[1] = "hi"; // myArr == [42,"hi"], length==2
+          myArr[2] = true; // myArr == [42,"hi",true], length==3</pre>
+        <h3>Arrays can be sparsely populated:</h3>
+        <pre>myArr[myArr.length+1] = 2; // myArr == [42,"hi",true,undefined,2]
+          console.log(myArr.length); // -&gt; "5"
+          </pre>
+        <h3>Overwriting array values:</h3>
+        <pre>myArr[0] = 101; // myArr == [101,"hi",true,undefined,2]
+          myArr[3] = "MG"; // myArr == [101,"hi",true,"MG",2]
+          </pre>
+        <h3>Shorten arrays with pop(), lengthen with push():</h3>
+        <pre>myArr.pop(); // myArr == [101,"hi",true,"MG"]
+          console.log(myArr.length); // -&gt; "4"
+          myArr.push("dat"); // myArr == [101,"hi",true,"MG","dat"]
+          console.log(myArr.length); // -&gt; "5"
+          </pre>
+        <p>From your work with the Basic 13 challenges, we assume that you already know how to read from&nbsp;numerical arrays&nbsp;and
+          that you can easily create JavaScript functions to get the&nbsp;
+          <strong>minimum</strong>&nbsp;or&nbsp;
+          <strong>maximum</strong>&nbsp;value, the&nbsp;
+          <strong>sum</strong>&nbsp;of all values in the array, or the
+          <strong>&nbsp;average</strong>&nbsp;of all values in the array. If this is not the case, definitely review those implementations
+          before continuing to today’s challenges.</p>
+        <p>
+          <br>
+        </p>
+        <p>Here is a list of concepts to consider; some or all will be used in this chapter.</p>
+        <ul>
+          <li>Array.pop() &amp; Array.push()</li>
+          <li>arrays grow: Array.length == lastIdx-1</li>
+          <li>if-else statements</li>
+          <li>for /while loops</li>
+          <li>arrays can contain different types</li>
+          <li>arrays are objects, passed by ref (ptr)</li>
+        </ul>
+        <p>
+          <br>
+        </p>
+
+
+
+
+
+
+
+
+        <h1>Array.length</h1>
+        <p></p>
+        <p>Some programmers think of
+          <strong>Array.length</strong> as the number of array elements. This is usually true, but&nbsp;certain things can cause
+          it not to be the case. If you create and control an array (as opposed to working&nbsp;with an array received from
+          some other code), then you can avoid these things, which will make your&nbsp;code less complex. Let’s explore
+          <strong>.length</strong>&nbsp;so that we can keep life simple, for you and your arrays.</p>
+        <p>The array property
+          <strong>.length</strong> is defined as ‘one greater than the largest populated index’:
+          <br>
+        </p>
+        <pre>var myArr == [42,"hi"]; // myArr.length == 2
+            myArr.push(true); // myArr == [42,"hi",true] and length == 3
+            </pre>
+        <p>However, when directly setting values in arrays, we can add them at any (non-negative integer) index:</p>
+        <pre>myArr[myArr.length+1] = 2; // myArr == [42,"hi",true,undefined,2]
+            console.log(myArr.length); // "5", although we set only 4 values
+            myArr.pop(); // myArr == [42,"hi",true,undefined]
+            console.log(myArr.length); // "4", although we never set myArr[3]
+            </pre>
+        <p>
+          <br>
+        </p>
+        <p>By setting an array value at an index beyond array’s end, we created an empty space in our array – you&nbsp;could
+          call it ‘sparse’ rather than having entirely contiguous values. Sparseness can be useful – in fact with
+          <em> associative</em> arrays (objects), they will always be sparse – but generally with numerical arrays it vastly simplifies
+          things to avoid this. How would you do this?</p>
+        <p>
+          <br>
+        </p>
+        <p>When adding a value to an array, use the
+          <strong>push() </strong>function, or directly add the value to array’s end&nbsp;
+          <strong>(arr[arr.length])</strong>, or move another value there if you need the new value to be somewhere other than the
+          array’s end. In other words, if you don’t use
+          <strong>push(),</strong> make sure that
+          <strong>arr[arr.length] </strong>is the next index in the array to be populated, rather than a larger index.</p>
+        <p>
+          <br>
+        </p>
+        <p>Likewise, when removing array values, use
+          <strong>pop() </strong>or directly decrement the length
+          <strong> (arr.length--)</strong>.&nbsp;This means that if you need to remove a value from the middle of your array, you
+          need to move the last value in the array into that middle index. Even though you are removing a middle value, you
+          won’t be removing that value’s “chair”. You’ll actually be removing the last “chair” in the array, so the value&nbsp;currently
+          there needs to be moved somewhere else!</p>
+        <p>
+          <br>
+        </p>
+        <p>Let’s try these techniques on a few challenges. Remember, solve them without creating new arrays.</p>
+
+
+
+
+
+        <h1>Passing By Reference</h1>
+        <p>Arrays are passed by
+          <em>reference</em>. This means that when an array is sent as an argument, a pointer is&nbsp;sent. For this reason,
+          even though parameters are always
+          <u>copies</u> of the originals, with arrays (and all&nbsp;objects) a
+          <em>pointer </em>is copied, resulting in caller and callee both having a copy of the same pointer. Hence both are looking
+          at the same location in memory, and both will reference the same array. When we pass an array to another function,
+          the array is passed “live” – changes the callee makes in that array are reflected when we return to the caller,
+          regardless of whether the called function
+          <em>returns</em> that array.</p>
+
+
+        <h1>Another T-Diagram (Loops)</h1>
+        <p></p>
+        <p>When working through a set of looping instructions with an array, a T-diagram can be especially useful.&nbsp;Let’s
+          do exactly that, with the following code and input array.</p>
+        <pre class="active_pre">var arr = [42,68,7,21,243,512];
+          for (var x = arr.length-2; x &gt; 1; x--) {
+          arr[x - 1] = arr[x + 1];
+          }
+          console.log(arr);
+          console.log(x);// Does x exist out here?
+        </pre>
+        <p>As we enter the loop for the first time, here is our T-diagram:</p>
+        <figure>
+          <img src="https://s3.amazonaws.com/General_V88/boomyeah2015/codingdojo/curriculum/content/chapter/t-diagram_1.jpg" style="width: 365px; height: 123px;"
+            width="365" height="123">
+        </figure>
+        <p>We enter the loop (because
+          <strong> x &gt; 1</strong>) then set
+          <strong>arr[x–1]</strong> (or
+          <strong>arr[3]</strong>, which is currently
+          <strong>21</strong>) to become&nbsp;
+          <strong>arr[x+1]</strong> (
+          <strong>arr[5]</strong>, or
+          <strong> 512</strong>). Accordingly, within our diagram in the line for
+          <strong>arr</strong>, we change the
+          <strong>21</strong> to&nbsp;
+          <strong>512</strong>. Then
+          <strong>x</strong> decrements, so we change that value in our diagram as well, from 4 to 3. Because we see that we will
+          reference
+          <strong>arr[x+1]</strong> repeatedly, we add that to&nbsp;our T-diagram as well, with a current value of
+          <strong>243</strong>. We need to remember to update this, each time we change
+          <strong>x</strong>. Our updated T-diagram is as follows, as we return to loop’s beginning, to evaluate whether to reenter:</p>
+        <figure>
+          <img src="https://s3.amazonaws.com/General_V88/boomyeah2015/codingdojo/curriculum/content/chapter/t-diagram_2.jpg" style="width: 375px; height: 133px;"
+            width="375" height="133"> </figure>
+        <p>Because
+          <strong>x &gt; 1</strong>, we indeed reenter the loop. We now set
+          <strong>arr[x-1] </strong>(
+          <strong>arr[2]</strong>, currently
+          <strong>7</strong>) to become&nbsp;
+          <strong>arr[x+1],</strong> which is already in our diagram (
+          <strong>243</strong>). Then x&nbsp;decrements to
+          <strong>2,</strong> so we must update our
+          <strong>arr[x+1]&nbsp;</strong>reference: it is
+          <strong>arr[3]</strong>, which is
+          <strong>512</strong>. We now return to the
+          <br>FOR loop’s beginning. To the right is our updated T-diagram, as we check whether to reenter the loop:</p>
+        <figure>
+          <img src="https://s3.amazonaws.com/General_V88/boomyeah2015/codingdojo/curriculum/content/chapter/t-diagram_3.jpg" style="width: 397px; height: 137px;"
+            width="397" height="137"> </figure>
+        <p>You can probably complete the exercise on your own at this point, but we’ll continue onward for&nbsp;completeness.
+          Again
+          <strong>x &gt; 1,</strong> so we do in fact reenter. Again, we set
+          <strong>arr[x-1]</strong> (
+          <strong>arr[1]</strong>, currently
+          <strong>68</strong>)&nbsp;to become
+          <strong>arr[x+1] </strong>(
+          <strong>512</strong> in our diagram). We decrement
+          <strong> x&nbsp;</strong>to
+          <strong>1 </strong>and update our
+          <strong>arr[x+1]</strong> reference to
+          <strong>243</strong> (although ultimately we won’t need this). Returning to our FOR loop’s&nbsp;beginning, here is our
+          updated T-diagram at this point:</p>
+        <figure>
+          <img src="https://s3.amazonaws.com/General_V88/boomyeah2015/codingdojo/curriculum/content/chapter/t-diagram_4.jpg" style="width: 412px; height: 149px;"
+            width="412" height="149">
+        </figure>
+        <p>Looking now at<strong>x</strong>, we see we will not reenter the<strong>FOR.</strong> We will<strong>console.log</strong> both<strong>arr</strong> and<strong>x</strong>. The final&nbsp;value of<strong> arr </strong>is<strong>&nbsp;[42,512,243,512,243,512]</strong>. Yes,<strong>x</strong> has meaning outside the<strong>FOR</strong>: a value of<strong>1</strong>.</p>
+        <p>We hope this second walkthrough shows the clarity that T-diagrams can bring when iterating arrays.</p>
+        <p><strong> </strong>Here are the concepts/methods we’ve discussed; some or all will be used in this chapter’s challenges.As always, don’t use built-in array methods.</p>
+        <ul>
+          <li>for / while loops</li>
+          <li>Array.pop() &amp; push()</li>
+          <li>avoid sparseness</li>
+          <li>arrays grow: arr.length == lastIdx-1</li>
+          <li>if / else statements</li>
+          <li>can contain different data types in JS</li>
+          <li>arrays are objects, passed by reference (ptr)</li>
+        </ul>
+
+
+        <h1>“Truthy” and “Falsy”</h1>        
+
+        <p>JavaScript is well known for its ‘loose’ treatment of data types. In actuality, JavaScript considers almost&nbsp;everything an object, since almost every possible value has a set of methods attached (<strong>valueOf</strong>,&nbsp;<strong>toString</strong>, etc). That said,<strong>typeof</strong> returns six possible values, suggesting that there are six top-level&nbsp;data types:<strong>boolean</strong>,<strong>number, string, object, function,</strong> and<strong> undefined</strong>. (A seventh, introduced in ES6, is left as an exercise for the reader.) JavaScript converts values between data types, as&nbsp;needed. For example, <strong>if()</strong>converts any value to a boolean, to decide which way to branch.</p>
+
+        <p>Most values are considered something and if converted to a boolean, equate to <strong> true</strong>. Only six values&nbsp;are considered nothing: <strong>false, 0, NaN, "", null, undefined</strong>; these six are “falsy”, because when&nbsp;converted to a boolean, they equate to <strong>false</strong>. All other values are “truthy”, including all functions,&nbsp;objects, non-0 numbers (e.g.: <strong>-Infinity</strong>) and non-empty strings (e.g.: <strong>"0"</strong> or <strong>"false"</strong>).</p>
+
+
+
+        <h1>Arrays Review</h1>
+        <p></p>
+        <p>This chapter covered JavaScript arrays in more depth. We showed how to<em><u>declare and initialize</u></em> arrays,&nbsp;how to<u><em>read </em></u>from specific indices, and how to<u><em>write</em></u> values into arrays – both overwriting existing values,&nbsp;as well as writing into new index locations that likely extend an array’s length. We made significant use&nbsp;of the property<strong><u> .length</u></strong> that is present in every array, and we discussed how this property is usually&nbsp;(but<em><u> not always</u></em>) equal to the<u><em>number of elements</em></u> present in the array. Specifically, we mentioned that&nbsp;arrays can be<u><em> sparse</em></u>, which means we can configure an array so that certain index locations have not&nbsp;yet been written with any value (and hence contain<strong>undefined</strong>). We rehearsed numerous times the&nbsp;iteration of an array, using a<strong>FOR</strong> loop. We touched on the subject of function parameters that are&nbsp;<u><em>passed by reference</em></u>, and how that changes a function from purely returning advisory information to&nbsp;making permanent changes in the array (or another parameter). We did an exhaustive walkthrough of&nbsp;<u><em>debugging FOR loops with arrays</em></u>. Finally, we built on our new understanding of JavaScript data types,&nbsp;and discussed the values that (across type conversion) all equate to<strong>false</strong> – the six “<u><em>falsy</em></u>” values.</p>
+
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+  <script src="bootstrap.min.js"></script>
+  <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+  <script src="holder.min.js"></script>
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>
