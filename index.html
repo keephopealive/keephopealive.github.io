@@ -57,23 +57,11 @@
 						
 						<a href="#">Foundational Concepts</a>
 						<ul>
-							<li><a href="#">Computers, Software, and Source Code</a></li>
-							<li><a href="#">Code Flow</a></li>
-							<li><a href="#">Variables</a></li>
-							<li><a href="#">Data Types</a></li>
-							<li><a href="#">Not All Equals Signs Are the Same!</a></li>
-							<li><a href="#">Printing to the Console</a></li>
-							<li><a href="#">Functions</a></li>
-							<li><a href="#">Conditionals</a></li>
-							<li><a href="#">Complex Conditionals</a></li>
-							<li><a href="#">Chaining and Nesting</a></li>
-							<li><a href="#">Loops</a></li>
-							<li><a href="#">FOR Loops</a></li>
-							<li><a href="#">WHILE Loops</a></li>
-							<li><a href="#">Other Loop Tips</a></li>
-							<li><a href="#">Loops and Code Flow</a></li>
-							<li><a href="#">Parameters</a></li>
-							<li><a href="#">Foundations Review</a></li>
+							<li><a href="#ComputersSoftwareSoureCode">Computers, Software, and Source Code</a></li>
+							<li><a href="#CodeFlow">Code Flow</a></li>
+							<li><a href="#Variables">Variables</a></li>
+							<li><a href="#DataTypes">Data Types</a></li>
+							<li><a href="#NotAllEqualsSignsAreTheSame">Not All Equals Signs Are the Same!</a></li>
 						</ul>
 
 						<a href="#">Arrays</a>
@@ -89,227 +77,69 @@
 				</ul>
 			</div>
 
-			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-				<h1>Introduction</h1>
-
-				<p>This chapter explores the array: reading, changing, as well as adding and removing elements (which change the array’s length). Before chapter’s end, we touch on associative arrays as well. At this point we expect you to quickly complete the 13 mandatory algorithm challenges. Building array-inspection functions such as <strong>min(arr), max(arr), sum(arr) </strong>and <strong>average(arr)</strong> should be easy and rapid.</p>
-
-				<p>Let’s review. Arrays store multiple values, which are accessed by specifying an index (offset from array front) in square brackets. This random-access makes arrays well-suited to be read in a different order than they were added. Arrays are less suitable (still common) in scenarios with many insertions and removals if you need the array to stay in a particular sorted order. In that case, other values might need to be moved to create a space for inserting a new value (or, to fill a vacancy caused by removing a value). Arrays are not limited to one data type: one array can contain numbers, booleans, strings, etc.</p>
-
-				<p>Arrays are zero-based: an array’s first value is located at index 0. Accordingly, array attribute <strong>.length</strong> literally means “one more than the last populated index.” Like other interpreted languages, JavaScript arrays are not fixed-length; they automatically grow as values are set beyond the current length. </p>
-
-				<p>Tracking variables with T-diagrams can be very helpful when working with arrays. Use a T-diagram for this chapter’s challenges. Below are constructs we’ll use this chapter. Remember these building blocks!</p>
-
-				<h3>Declaring a new array:</h3>
-<pre>
-var myArr = [];
-
-console.log(myArr.length); // -&gt; "0"
-</pre>
-
-				<h3>Setting and accessing array values:</h3>
-<pre>
-myArr[0] = 42; // myArr == [42], length==1
-
-console.log(myArr[0]); // -&gt; "42"
-</pre>
-
-				<h3> Array.length is determined by largest index:</h3>
-<pre>
-myArr[1] = "hi"; // myArr == [42,"hi"], length==2
-
-myArr[2] = true; // myArr == [42,"hi",true], length==3
-</pre>
-
-				<h3>Arrays can be sparsely populated:</h3>
-<pre>
-myArr[myArr.length+1] = 2; // myArr == [42,"hi",true,undefined,2]
-
-console.log(myArr.length); // -&gt; "5"
-</pre>
-
-<h3>Overwriting array values:</h3>
-<pre>
-myArr[0] = 101; // myArr == [101,"hi",true,undefined,2]
-
-myArr[3] = "MG"; // myArr == [101,"hi",true,"MG",2]
-</pre>
-
-				<h3>Shorten arrays with pop(), lengthen with push():</h3>
-<pre>
-myArr.pop(); // myArr == [101,"hi",true,"MG"]
-
-console.log(myArr.length); // -&gt; "4"
-
-myArr.push("dat"); // myArr == [101,"hi",true,"MG","dat"]
-
-console.log(myArr.length); // -&gt; "5"
-</pre>
-
-				<p>From your work with the Basic 13 challenges, we assume that you already know how to read from numerical arrays and that you can easily create JavaScript functions to get the <strong>minimum</strong> or <strong>maximum</strong> value, the <strong>sum</strong> of all values in the array, or the <strong> average</strong> of all values in the array. If this is not the case, definitely review those implementations before continuing to today’s challenges.</p>
-
-				<p>Here is a list of concepts to consider; some or all will be used in this chapter.</p>
-				<ul>
-					<li>Array.pop() &amp; Array.push()</li>
-					<li>arrays grow: Array.length == lastIdx-1</li>
-					<li>if-else statements</li>
-					<li>for /while loops</li>
-					<li>arrays can contain different types</li>
-					<li>arrays are objects, passed by ref (ptr)</li>
-				</ul>
-
-				<h1>Array.length</h1>
-				<p>Some programmers think of <strong>Array.length</strong> as the number of array elements. This is usually true, but certain things can cause it not to be the case. If you create and control an array (as opposed to working with an array received from some other code), then you can avoid these things, which will make your code less complex. Let’s explore <strong>.length</strong> so that we can keep life simple, for you and your arrays.</p>
-				
-				<p>The array property <strong>.length</strong> is defined as ‘one greater than the largest populated index’:</p>
-
-<pre>
-var myArr == [42,"hi"]; // myArr.length == 2
-
-myArr.push(true); // myArr == [42,"hi",true] and length == 3
-</pre>
-
-				<p>However, when directly setting values in arrays, we can add them at any (non-negative integer) index:</p>
-<pre>
-myArr[myArr.length+1] = 2; // myArr == [42,"hi",true,undefined,2]
-
-console.log(myArr.length); // "5", although we set only 4 values
-
-myArr.pop(); // myArr == [42,"hi",true,undefined]
-
-console.log(myArr.length); // "4", although we never set myArr[3]
-</pre>
-
-				<p>By setting an array value at an index beyond array’s end, we created an empty space in our array – you could call it ‘sparse’ rather than having entirely contiguous values. Sparseness can be useful – in fact with <em> associative</em> arrays (objects), they will always be sparse – but generally with numerical arrays it vastly simplifies things to avoid this. How would you do this?</p>
-
-				<p>When adding a value to an array, use the <strong>push() </strong>function, or directly add the value to array’s end  <strong>(arr[arr.length])</strong>, or move another value there if you need the new value to be somewhere other than the array’s end. In other words, if you don’t use <strong>push(),</strong> make sure that <strong>arr[arr.length] </strong>is the next index in the array to be populated, rather than a larger index.</p>
-
-				<p>Likewise, when removing array values, use <strong>pop() </strong>or directly decrement the length <strong> (arr.length--)</strong>. This means that if you need to remove a value from the middle of your array, you need to move the last value in the array into that middle index. Even though you are removing a middle value, you won’t be removing that value’s “chair”. You’ll actually be removing the last “chair” in the array, so the value currently there needs to be moved somewhere else!</p>
-
-				<p>Let’s try these techniques on a few challenges. Remember, solve them without creating new arrays.</p>
-
-				<h1>Passing By Reference</h1>
-				<p>Arrays are passed by <em>reference</em>. This means that when an array is sent as an argument, a pointer is sent. For this reason, even though parameters are always <u>copies</u> of the originals, with arrays (and all objects) a <em>pointer </em>is copied, resulting in caller and callee both having a copy of the same pointer. Hence both are looking at the same location in memory, and both will reference the same array. When we pass an array to another function, the array is passed “live” – changes the callee makes in that array are reflected when we return to the caller, regardless of whether the called function <em>returns</em> that array.</p>
-
-				<h1>Another T-Diagram (Loops)</h1>
-				<p>When working through a set of looping instructions with an array, a T-diagram can be especially useful. Let’s do exactly that, with the following code and input array.</p>
-
-<pre class="active_pre">var arr = [42,68,7,21,243,512];
-for (var x = arr.length-2; x &gt; 1; x--) {
-	arr[x - 1] = arr[x + 1];
-}
-
-console.log(arr);
-
-console.log(x);// Does x exist out here?
-</pre>
-				<p>As we enter the loop for the first time, here is our T-diagram:</p>
-				<figure>
-					<img src="https://s3.amazonaws.com/General_V88/boomyeah2015/codingdojo/curriculum/content/chapter/t-diagram_1.jpg" style="width: 200px; height: auto;">
-				</figure>
-				<p>We enter the loop (because <strong> x &gt; 1</strong>) then set <strong>arr[x–1]</strong> (or <strong>arr[3]</strong>, which is currently <strong>21</strong>) to become&nbsp; <strong>arr[x+1]</strong> ( <strong>arr[5]</strong>, or <strong> 512</strong>). Accordingly, within our diagram in the line for <strong>arr</strong>, we change the <strong>21</strong> to&nbsp; <strong>512</strong>. Then <strong>x</strong> decrements, so we change that value in our diagram as well, from 4 to 3. Because we see that we will reference <strong>arr[x+1]</strong> repeatedly, we add that to&nbsp;our T-diagram as well, with a current value of <strong>243</strong>. We need to remember to update this, each time we change <strong>x</strong>. Our updated T-diagram is as follows, as we return to loop’s beginning, to evaluate whether to reenter:</p>
-				
-				<figure>
-					<img src="https://s3.amazonaws.com/General_V88/boomyeah2015/codingdojo/curriculum/content/chapter/t-diagram_2.jpg" style="width: 375px; height: 133px;" width="375" height="133">
-				</figure>
-
-				<p>Because <strong>x &gt; 1</strong>, we indeed reenter the loop. We now set <strong>arr[x-1] </strong>( <strong>arr[2]</strong>, currently <strong>7</strong>) to become&nbsp; <strong>arr[x+1],</strong> which is already in our diagram ( <strong>243</strong>). Then x&nbsp;decrements to <strong>2,</strong> so we must update our <strong>arr[x+1]&nbsp;</strong>reference: it is <strong>arr[3]</strong>, which is <strong>512</strong>. We now return to the <br>FOR loop’s beginning. To the right is our updated T-diagram, as we check whether to reenter the loop:</p>
-				<figure>
-					<img src="https://s3.amazonaws.com/General_V88/boomyeah2015/codingdojo/curriculum/content/chapter/t-diagram_3.jpg" style="width: 200px; height:auto;">
-				</figure>
-				<p>You can probably complete the exercise on your own at this point, but we’ll continue onward for&nbsp;completeness. Again <strong>x &gt; 1,</strong> so we do in fact reenter. Again, we set <strong>arr[x-1]</strong> ( <strong>arr[1]</strong>, currently <strong>68</strong>)&nbsp;to become <strong>arr[x+1] </strong>( <strong>512</strong> in our diagram). We decrement <strong> x&nbsp;</strong>to <strong>1 </strong>and update our <strong>arr[x+1]</strong> reference to <strong>243</strong> (although ultimately we won’t need this). Returning to our FOR loop’s&nbsp;beginning, here is our updated T-diagram at this point:</p>
-				
-				<figure>
-					<img src="https://s3.amazonaws.com/General_V88/boomyeah2015/codingdojo/curriculum/content/chapter/t-diagram_4.jpg" style="width: 350px; height: auto;">
-				</figure>
-				
-				<p>Looking now at <strong>x</strong>, we see we will not reenter the <strong>FOR.</strong> We will <strong>console.log</strong> both <strong>arr</strong> and <strong>x</strong>. The final&nbsp;value of <strong> arr </strong>is <strong>&nbsp;[42,512,243,512,243,512]</strong>. Yes, <strong>x</strong> has meaning outside the <strong>FOR</strong>: a value of <strong>1</strong>.</p>
-				
-				<p>We hope this second walkthrough shows the clarity that T-diagrams can bring when iterating arrays.</p>
-				
-				<p>Here are the concepts/methods we’ve discussed; some or all will be used in this chapter’s challenges.As always, don’t use built-in array methods.</p>
-				
-				<ul>
-					<li>for / while loops</li>
-					<li>Array.pop() &amp; push()</li>
-					<li>avoid sparseness</li>
-					<li>arrays grow: arr.length == lastIdx-1</li>
-					<li>if / else statements</li>
-					<li>can contain different data types in JS</li>
-					<li>arrays are objects, passed by reference (ptr)</li>
-				</ul>
-
-				<h1>“Truthy” and “Falsy”</h1>
-
-				<p>JavaScript is well known for its ‘loose’ treatment of data types. In actuality, JavaScript considers almost&nbsp;everything an object, since almost every possible value has a set of methods attached ( <strong>valueOf</strong>,&nbsp; <strong>toString</strong>, etc). That said, <strong>typeof</strong> returns six possible values, suggesting that there are six top-level&nbsp;data types: <strong>boolean</strong>, <strong>number, string, object, function,</strong> and <strong> undefined</strong>. (A seventh, introduced in ES6, is left as an exercise for the reader.) JavaScript converts values between data types, as&nbsp;needed. For example, <strong>if()</strong>converts any value to a boolean, to decide which way to branch.</p>
-
-				<p>Most values are considered something and if converted to a boolean, equate to <strong> true</strong>. Only six values&nbsp;are considered nothing: <strong>false, 0, NaN, "", null, undefined</strong>; these six are “falsy”, because when&nbsp;converted to a boolean, they equate to <strong>false</strong>. All other values are “truthy”, including all functions,&nbsp;objects, non-0 numbers (e.g.: <strong>-Infinity</strong>) and non-empty strings (e.g.: <strong>"0"</strong> or <strong>"false"</strong>).</p>
-
-				<h1>Arrays Review</h1>
-				<p>This chapter covered JavaScript arrays in more depth. We showed how to <em> 	<u>declare and initialize</u> </em> arrays,&nbsp;how to <u><em>read </em> </u>from specific indices, and how to <u> 	<em>write</em> </u> values into arrays – both overwriting existing values,&nbsp;as well as writing into new index locations that likely extend an array’s length. We made significant use&nbsp;of the property <strong><u> .length</u> </strong> that is present in every array, and we discussed how this property is usually&nbsp;(but <em><u> not always</u> </em>) equal to the <u><em>number of elements</em> </u> present in the array. Specifically, we mentioned that&nbsp;arrays can be <u><em> sparse</em> </u>, which means we can configure an array so that certain index locations have not&nbsp;yet been written with any value (and hence contain <strong>undefined</strong>). We rehearsed numerous times the&nbsp;iteration of an array, using a <strong>FOR</strong> loop. We touched on the subject of function parameters that are&nbsp; <u><em>passed by reference</em> </u>, and how that changes a function from purely returning advisory information to&nbsp;making permanent changes in the array (or another parameter). We did an exhaustive walkthrough of&nbsp; <u><em>debugging FOR loops with arrays</em> </u>. Finally, we built on our new understanding of JavaScript data types,&nbsp;and discussed the values that (across type conversion) all equate to <strong>false</strong> – the six “ <u><em>falsy</em> </u>” values.</p>
-
-			</div>
-
-
-
-			<!-- Arrays -->
-
 
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+				<section>
+					<h1>Foundation Concepts</h1>
+					<h2 id="ComputersSoftwareSoureCode">Computers, Software, and Source Code</h2>
+					<p>Computers are amazing. They rapidly perform complex calculations, store immense amounts of data, and almost instantly retrievespecific bits of information from mountains of data. In addition to being fast, they appear superhuman in theirability to use information to make decisions. How do they do it?</p>
+					<p>Simply put, computers are machines. We as humans are skilled at creating tools that perform specific tasks very well: a toaster,for example, or a lawn mower. Computers are tools built from components such as semiconductor chips , and ongoingadvances in material science enable these pieces to get smaller and faster with every successive year (see Moore’sLaw ). This is why computers have become so breathtakingly fast, but it only partially explains why they canseem so smart . It doesn’t really tell us why they are so universally relied upon to solve such a sectionerse rangeof problems across today’s world.</p>
+					<p>Computing is exciting because computing devices are flexible – they can be taught to do things not imagined when they wereoriginally built. Science fiction may become science in the future, but for today they only know what we tellthem; they only do as they are told. Who teaches them, who tells them what to do? Software engineers, developers,programmers! You are reading this, so you probably intend to be one too. From a computer’s viewpoint, you aretraining to become an educator. (-:</p>
+					<p>How do programmers tell computers what to do? We create Software . Software is a sequence of instructions that we build andprovide to a computer, which then “mindlessly” runs those instructions. Computers cannot natively understandhuman language, nor can humans read the language of semiconductor components. To talk with computers, we needa “go-between” format: something that software engineers can understand, yet can also be translated into machinelanguage instructions.</p>
+					<p>Many of these “go-between” languages have been created: PHP, Python, Ruby, JavaScript, Swift, C#, Java, Perl, Erlang, Go,Rust, and others – even HTML and CSS! Each language has differing strengths and therefore is useful in differentsituations. Programming languages all do essentially the same things though: they read in a series of human-readablesteps instructing a computer how to respond, and they translate the steps into a format the computer can understandand later execute.</p>
+					<p>All these sequences of instructions, written in programming languages like JavaScript, are what we call Source Code . Howand when this source code is translated into machine code will depend on the language and the machine. Interpretedlanguages like PHP, Python and Ruby translate from source code into machine code “on the fly”, immediately beforea computer needs it. Compiled languages do some or all of this translation ahead of time. As we said earlier,a computer simply follows instructions it was given. More specifically, though, it executes ( runs ) machinecode that was built ( translated ) from some piece of source code: code that was written by a software engineer.</p>
+					<p>Let’s teach you how to think like a computer, so you can write effective source code. We have chosen to use JavaScript asthe programming language for this book, so along the way you’ll learn the specifics of that language. With veryfew exceptions, however, these concepts are universal.</p>
+				</section>
 				
-				<h1>Arrays</h1>
+				<section>
+					<h2 id="CodeFlow">Code Flow</h2>
+					<p>When a computer executes (runs) a piece of code, it simply reads each line from the beginning of the file, executing it in order. When the computer gets to the end of the lines to execute, it is finished with that program. There may be other programs running on that computer at the same time (e.g. pieces of the operating system that update the monitor screen), but as far as your program goes, when the computer’s execution gets to the end of the source you’ve given it, the program is done and the computer has completed running your code.</p>
+					<p>It isn’t necessary for your code to be purely linear from the top of the file to the end of the file, however. You can instruct the computer to execute the same section of code multiple times – this is called a program LOOP . Also, you can have the computer jump to a different section of your code, based on whether a certain condition is true or false – this is called an IF-ELSE statement (or a conditional). Finally, for code that you expect to use often, whether called by various places in your own code, or perhaps even called by others’ code, you can separate this out and give it a specific label so that it can be called directly. This is called a FUNCTION . More on each of these later.</p>
+				</section>  
 				
-				<p>This chapter explores the  array: reading, changing, as well as adding and removing elements (which change the array’s length). Before chapter’s end, we touch on associative arrays as well. At this point we expect you to quickly complete the 13 mandatory algorithm challenges. Building array-inspection functions such as  min(arr),  max(arr),  sum(arr) and  average(arr) should be easy and rapid. </p>
-
-				<p>Let’s review. Arrays store multiple values, which are accessed by specifying an index (offset from array front) in square brackets. This random-access makes arrays well-suited to be read in a different order than they were added. Arrays are less suitable (still common) in scenarios with many insertions and removals, if you need the array to stay in a particular sorted order. In that case, other values might need to be moved to create a space for inserting a new value (or, to fill a vacancy caused by removing a value). Arrays are not limited to one data type: one array can contain numbers, booleans, strings, etc.</p>
-
-				<p>Arrays are zero-based: an array’s first value is located at index 0. Accordingly, array attribute .length literally means “one more than the last populated index.” Like other interpreted languages, JavaScript arrays are not fixed-length; they automatically grow as values are set beyond the current length.</p>
-
-				<p>Tracking variables with T-diagrams can be very helpful when working with arrays. Use a T-diagram for this chapter’s challenges. Below are constructs we’ll use this chapter. Remember these building blocks!</p>
-				<p>Declaring a new array:</p>
-<pre>
-var myArr= []; 
-
-console.log(myArr.length);	// -&gt; "0" 
-</pre>
-				<p>Setting and accessing array values:</p>
-<pre>
-myArr[0] = 42;			// myArr == [42], length==1 
-
-console.log(myArr[0]);		// -&gt; "42"
-</pre>
-
-				<p>Array.length is determined by largest index:</p>
-<pre>
-myArr[1] ="hi";          // myArr == [42,"hi"], length==2 
-
-myArr[2] = true;          // myArr == [42,"hi",true], length==3 
-</pre>
-
-				<p>Arrays can be sparsely populated:</p>
-<pre>
-myArr[myArr.length+1] = 2;  	// myArr == [42,"hi",true,undefined,2]
-
-console.log(myArr.length);  	// -&gt; "5"
-</pre>
-
-					<p>Overwriting array values:</p>
-<pre>
-myArr[0] = 101;             // myArr == [101,"hi",true,undefined,2] 
-myArr[3] ="MG";            // myArr == [101,"hi",true,"MG",2] 
-</pre>
-
-					<p>Shorten arrays with pop(), lengthen with push():</p>
-<pre>
-myArr.pop();                // myArr == [101,"hi",true,"MG"] 
-
-console.log(myArr.length);  	// -&gt; "4" 
-
-myArr.push("dat");          // myArr == [101,"hi",true,"MG","dat"] 
-
-console.log(myArr.length);  	// -&gt; "5" 
-</pre>
-					
+				<section>
+					<h2 id="Variables">Variables</h2>
+					<p>Imagine if you had two objects (a book and a ball) that you wanted to carry around in your hands. With two hands, it is easy enough to carry two objects. However, what if you also had a sandwich? You don’t have enough hands, so you need one or more containers for each of the objects. What if you had a box with a label on it, inside which you can put one of your objects. The box is closed, so all you see is the label, but it is easy enough to open the box and look inside. This is essentially what a variable does.</p>
+					<p>A variable is a specific spot in memory, with a label that you give it. You can put anything you want into that memory location and later refer to the value of that memory, by using the label. The statement:</p>
+					<p>varmyName ='Martin';</p>
+					<p>creates a variable, gives it a label of myName , and puts a value of &quot;Martin&quot; into that memory location. Later, to reference or inspect the value that you stored there, you simply refer to the label myName . For example (jumping ahead to the upcoming Printing to the Console topic), to display the value in the variable myName , do this:</p>
+					<p>console.log(myName);</p>
+				</section>
+				
+				<section>
+					<h2 id="DataTypes">Data Types</h2>
+					<p>Containers exist to hold things. You would create a variable because you want it to store some value – some piece of information. A value could be a number, or a sentence made of text characters, or something else. Specifically, JavaScript has a few data types , and all values are one of those types. Of these six data types, three are important to mention right now. These are Number, String, and Boolean.</p>
+					<p>In JavaScript, a <SPAN>Number can store a huge range of numerical values from extremely large values to microscopically small ones, to incrediblynegative values as well. If you know other programming languages, you might be accustomed to making a distinctionbetween integers and floating-point numbers – JavaScript makes no such distinction.</p>
+					<p>A <SPAN>String is any sequence of characters, contained between quotation marks. In JavaScript, you can use either single-quotesor double-quotes. Either way, just make sure to close the string the same way you opened it. 'Word' and &quot;wurd&quot;are both fine, but 'weird&quot; and &quot;whoa!' are not.</p>
+					<p>Finally, a <SPAN>Boolean has only two possible values: true and false . You can think of a Boolean like a traditional light switch,or perhaps a yes/no question on a test. Just as a light switch can be either on or off , and just as a yes/noquestion can be answered with either yes or no , likewise a Boolean must have a value of either true or false– there is nothing in-between.</p>
+					<p>One of the main things we do with variables, once they contain information of a certain data type, is to compare them. This is our next section.</p>
+				</section>
+				
+				<section>
+					<h2 id="NotAllEqualsSignsAreTheSame">Not all Equals Signs Are the Same!</h2>
+					<p>Not All Equals Signs Are the Same ! In many programming languages, you see both = and == . These mean different things ! Code (X=Y) can be described as “Set the value of X to become the value of Y” , and yo u can describe (X== Y) as “Is the value of X equivalent to the value of Y?” It is mor e common – but less helpful right now while learning these concepts – verbalize these a s “Assign Y to X” and “Are X and Y equal?” , respectively .</p>
+					<p>Use = to set things , == to test things . Single-equals is for assignment ; double-equals is for comparison .</p>
+					<p>Many programming languages are extremely picky about data types. When asked to combine two values that have differing data types, some languages will halt with an error rather than do so. JavaScript, however, is not so strict. In fact, you could say that JavaScript is very loosely typed: it very willingly changes a variable’s data type, whenever needed. Remember the == operator that we described previously? It actually means “ after converting X and Y to the same data type , are their values equivalent?” If you want strict comparison without converting data types, use the === operator.</p>
+					<p>Generally, === is advised, unless you explicitly intend to equate values of differing types, such as {1,true,&quot;1&quot;} or {0,false,&quot;0&quot;} , etc. (If this last sentence doesn’t make sense yet, don’t worry.)</p>
+				
+					<p>Quick quiz:</p>
+					<ol>
+						<li>How many inputs are accepted by the == operator and the === operator , respectively ?</li>
+						<li>Do inputs to == and === operators need to be the same data type, for the operators to function?</li>
+						<li>What is the data type of the output value produced by the == and === operators?</li>
+					</ol>
+					<p>Hey! Don’t just read on: jot down answers for those questions before moving on.</p>
+					<p>Done? OK, good….</p>
+					<p>Answers:</p>
+					<ol>
+						<li>The == and === operators both accept two values (one before the operator, and one after).</li>
+						<li>No , two values need not be the same type for these operators. However, if they are not, === always returns false . The == internally converts values to the same type before comparing.</li>
+						<li>The == and === operators both return a Boolean value ( true or false ).</li>
+					</ol>
+					<p>Now that you know just a little about Numbers, Strings and Booleans, let’s start using them.</p>
+				</section>
+				
 			</div>
 		</div>
 	</div>
